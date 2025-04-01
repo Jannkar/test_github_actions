@@ -36,4 +36,4 @@ jobs:
 
       - name: Print the selected choice
         run: |
-          echo "You selected: ${{ github.event.inputs.action }}"
+          echo "You selected: ${{ github.event.inputs.choice_name }}"
