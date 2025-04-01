@@ -14,7 +14,7 @@ on:
 #          - Option3
 
 jobs:
-  print_info:
+  print_commit_info:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
