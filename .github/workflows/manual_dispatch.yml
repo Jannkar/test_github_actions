@@ -14,8 +14,8 @@ jobs:
       - name: Print commit SHA
         run: |
           echo "${{ github.ref }}"
-          #echo "${{ github.sha }}"
-          #echo "Workflow run ID: ${{ github.run_id }}"
+          echo "${{ github.sha }}"
+          echo "Workflow run ID: ${{ github.run_id }}"
 
       #- name: Find current PR number
       #  uses: jwalton/gh-find-current-pr@v1
