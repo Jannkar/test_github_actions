@@ -2,16 +2,16 @@ name: Test Manual Dispatch
 
 on:
   workflow_dispatch:
-    inputs:
-      choice_name:
-        description: 'Select an action'
-        required: true
-        default: 'Option1'
-        type: choice
-        options:
-          - Option1
-          - Option2
-          - Option3
+#    inputs:
+#      choice_name:
+#        description: 'Select an action'
+#        required: true
+#        default: 'Option1'
+#        type: choice
+#        options:
+#          - Option1
+#          - Option2
+#          - Option3
 
 jobs:
   print_info:
@@ -20,7 +20,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Print commit SHA
+      - name: Print commit SHA & Workflow ID
         run: |
           echo "${{ github.ref }}"
           echo "${{ github.sha }}"
@@ -34,6 +34,6 @@ jobs:
         run: |
           echo "PR number: ${{ steps.pr-finder.outputs.pr }}"
 
-      - name: Print the selected choice
-        run: |
-          echo "You selected: ${{ github.event.inputs.choice_name }}"
+      #- name: Print the selected choice
+      #  run: |
+      #    echo "You selected: ${{ github.event.inputs.choice_name }}"
