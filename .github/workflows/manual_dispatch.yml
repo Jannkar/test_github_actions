@@ -22,4 +22,4 @@ jobs:
 
       - name: Echo PR number
         run: |
-          echo "PR number: ${{ steps.pr-finder.outputs.pr_number }}"
+          echo "PR number: ${{ steps.pr-finder.outputs.pr }}"
