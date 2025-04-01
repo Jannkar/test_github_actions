@@ -1,26 +1,25 @@
-name: Test Manual Dispatch
+name: Test manual dispatch
 
 on:
-  push:
   workflow_dispatch:
 
 jobs:
-  print_info:
+  print_commit_info:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Print commit SHA
+      - name: Print commit SHA & Workflow ID
         run: |
           echo "${{ github.ref }}"
-          #echo "${{ github.sha }}"
-          #echo "Workflow run ID: ${{ github.run_id }}"
+          echo "${{ github.sha }}"
+          echo "Workflow run ID: ${{ github.run_id }}"
 
-      #- name: Find current PR number
-      #  uses: jwalton/gh-find-current-pr@v1
-      #  id: pr-finder
-      #
-      #- name: Echo PR number
-      #  run: |
-      #    echo "PR number: ${{ steps.pr-finder.outputs.pr_number }}"
+      - name: Find current PR number
+        uses: jwalton/gh-find-current-pr@v1
+        id: pr-finder
+
+      - name: Echo PR number
+        run: |
+          echo "PR number: ${{ steps.pr-finder.outputs.pr }}"
